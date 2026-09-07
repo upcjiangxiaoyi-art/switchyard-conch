@@ -1,0 +1,11 @@
+{
+  "display_name": "🛤️ 枢轨 · Switchyard",
+  "loading_order": 120,
+  "requires": [],
+  "optional": [],
+  "js": "index.js",
+  "css": "style.css",
+  "author": "ripple & Claude Fable 5.1",
+  "version": "0.1.1",
+  "description": "🛤️ 枢轨（Switchyard）｜酒馆智能预设路由器。插件自动贴入一条极短路由协议；主 AI 在正文最后一行输出模式标记，枢轨据此把整套酒馆预设切到当前文体对应的场景预设，结束后切回。每个聊天独立记忆，支持手动锁定、精确映射、重 roll、已有 swipe、删楼与编辑后的状态校对。缺少目标预设时宁可不切不能换错。默认关。"
+}
