@@ -45,7 +45,7 @@ node switchyard.test.js
 
 ## 署名
 
-co-authored by **ripple & Claude Fable 5.1**
+co-authored by **ripple、Claude Fable 5.1 & OpenAI Codex**
 
 ## 0.1.1
 
