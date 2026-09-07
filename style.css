@@ -1,0 +1,6 @@
+/* 🛤️ 枢轨 · Switchyard —— 关键样式全内联在 index.js 里，这里只做锦上添花 */
+@keyframes sy-notice-in { from { transform: translateY(-6px); } to { transform: translateY(0); } }
+.sy-notice { animation: sy-notice-in .2s ease both; }
+#switchyard-drawer .sy-row { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; padding: 8px; border: 1px solid rgba(128,128,128,.25); border-radius: 10px; }
+#switchyard-drawer .sy-hint { color: #888; font-size: 11px; line-height: 1.6; }
+#switchyard-drawer .sy-log { font-family: ui-monospace, Menlo, monospace; font-size: 11px; white-space: pre-wrap; opacity: .85; max-height: 140px; overflow: auto; }
