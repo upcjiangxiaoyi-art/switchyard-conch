@@ -1,6 +1,6 @@
 /*
  *  🛤️ 枢轨 · Switchyard —— 酒馆智能预设路由器
- *  co-authored by ripple & Claude Fable 5.1
+ *  co-authored by ripple, Claude Fable 5.1 & OpenAI Codex
  *
  *  主 AI 在正文最后一行写一个极短标记：<route>nsfw</route> / <route>normal</route>
  *  枢轨读到就把整套酒馆预设切到「当前文体对应的那一套」，场景结束切回原预设。
@@ -15,7 +15,7 @@
  */
 
 const SY_NAME = "switchyard";
-const SY_VERSION = "0.1.1";
+const SY_VERSION = "0.1.2";
 const SY_META_KEY = "switchyard_v1";
 const SY_EP_KEY = "switchyard_route_instruction";
 const SY_DEFAULTS = {
@@ -357,7 +357,7 @@ function sySnippet() {
     var t = syTagNames()[0] || "route";
     var names = ["normal"].concat(syKnownModes());
     var opts = names.map(function(n){ return "<" + t + ">" + n + "</" + t + ">"; }).join("、");
-    return "每轮正文的最后一行，按本轮已经发生的场景单独输出一个标记：" + opts + "。只判断本轮实际发生的，不预测下一轮；没有变化就照上一轮写。标记之外不要解释。";
+    return "每轮正文的最后一行，预测下一轮回复应使用的预设模式，并单独输出一个标记：" + opts + "。根据当前情节走向判断：下一轮即将进入或仍处于对应特殊场景时写相应模式；下一轮应回到常规场景时写 normal。必须提前一轮切换，不要等特殊场景已经写出后才标记。标记之外不要解释。";
 }
 
 /* 由插件自己贴入最小协议：所有被路由到的预设都能继续报模式，用户无需逐份修改。 */
@@ -435,7 +435,7 @@ function syDrawerHTML() {
         + '<label style="margin-top:8px">路由协议预览（关闭自动贴入时再手动复制）</label><textarea id="sy-snippet" class="text_pole" rows="3" readonly></textarea>'
         + '<div style="margin:6px 0"><label><input type="checkbox" id="sy-notify"> 切换时在屏幕顶部弹一张小卡</label></div>'
         + '<label>最近切换</label><div id="sy-log" class="sy-log"></div>'
-        + '<div class="sy-hint" style="margin-top:8px;text-align:right">by ripple &amp; Claude Fable 5.1 · v' + SY_VERSION + '</div>'
+        + '<div class="sy-hint" style="margin-top:8px;text-align:right">by ripple, Claude Fable 5.1 &amp; OpenAI Codex · v' + SY_VERSION + '</div>'
         + '</div></div></div>';
 }
 function syBindUI() {
