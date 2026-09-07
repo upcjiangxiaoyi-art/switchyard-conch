@@ -167,6 +167,7 @@ console.log("\n【9】 关着什么都不做；给主 AI 的话按配置生成")
   eq(pm.getSelectedPresetName(), "野渡", "未启用不切");
   cfg.enabled = true;
   ok(F("sySnippet")().indexOf("<route>normal</route>") >= 0 && F("sySnippet")().indexOf("<route>nsfw</route>") >= 0, "snippet 含 normal 与已配模式");
+  ok(F("sySnippet")().indexOf("预测下一轮") >= 0 && F("sySnippet")().indexOf("提前一轮") >= 0, "snippet 要求预测并提前切换");
 }
 
 console.log("\n【10】 抽屉 UI 挂上了");
